@@ -1,10 +1,13 @@
 import pygame
 import model
 
+
 def allsobitiya():
     s = pygame.event.get()
+    if model.rect2.colliderect(model.rect):
+        model.speed_y = -3
+        print(model.speed_y)
     for a in s:
-        print(a)
         if a.type == pygame.KEYDOWN and (a.key == pygame.K_a or a.key == pygame.K_LEFT):
             model.ppl()
         if a.type == pygame.KEYDOWN and (a.key == pygame.K_d or a.key == pygame.K_RIGHT):
