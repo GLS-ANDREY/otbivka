@@ -2,9 +2,10 @@ import pygame
 import random
 
 rect = pygame.Rect([400,400,100,100])
-rect2 = pygame.Rect([600,50,50,50])
+rect2 = pygame.Rect([600,500,50,50])
 rect.centery = 500
 rect.centerx = 500
+speed_y = 3
 
 def ppl():
     rect.left = 0
@@ -27,6 +28,36 @@ def ppn():
     rect.height = 55
     rect.bottom = 1000
 
-def rect_shar():
-    speed_y = 3
+def otbiv_niz_shar():
+    global speed_y
+    if rect2.colliderect(rect):
+        speed_y = -3
+    elif speed_y != -3:
+        speed_y = 3
     rect2.centery += speed_y
+def otbiv_verx_shar():
+    global speed_y
+    if rect2.colliderect(rect):
+        speed_y = 3
+    elif speed_y != 3:
+        speed_y = -3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
