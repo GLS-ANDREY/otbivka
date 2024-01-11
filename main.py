@@ -6,7 +6,7 @@ import time
 while True:
     time.sleep(1/100)
     controller.allsobitiya()
-    model.otbiv_niz_shar()
-    # model.otbiv_pravo_shar()
-    # model.otbiv_levo_shar()
+    model.otbiv_verxniz_shar()
+    model.otbiv_levopravo_shar()
+    model.otbiv_ot_granic()
     view.ekran()
