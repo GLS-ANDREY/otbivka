@@ -50,11 +50,6 @@ def otbiv_ot_granic():
     global speed_x
     nx = speed_x
     ny = speed_y
-    if sharik.left <= 0:
-        nx = nx
-        ny = -ny
-        speed_x = nx
-        speed_y = ny
     if sharik.right >= 1000:
         nx = -nx
         ny = ny
@@ -65,3 +60,13 @@ def otbiv_ot_granic():
         ny = -ny
         speed_x = nx
         speed_y = ny
+    if sharik.left <= 0:
+        nx = nx
+        ny = ny
+        speed_x = -nx
+        speed_y = ny
+    if sharik.top <= 0:
+        nx = nx
+        ny = ny
+        speed_x = nx
+        speed_y = -ny
