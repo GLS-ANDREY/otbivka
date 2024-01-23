@@ -7,7 +7,7 @@ platforma.centery = 500
 platforma.centerx = 500
 speed_y = 2
 speed_x = 4
-a = 1
+a = 0
 
 
 def ppl():
@@ -38,33 +38,36 @@ def ppn():
     platforma.bottom = 1000
 
 
+
 def otbiv_verxniz_shar():
-    global speed_y
+    global speed_y,a
     if sharik.colliderect(platforma) and platforma.centery == 972:
         speed_y = -abs(speed_y)  # poletit vverx
         sharik.bottom = 945
+        a += 1
+        print(a)
     elif sharik.colliderect(platforma) and platforma.centery == 27:
         speed_y = abs(speed_y)  # poletit vniz
         sharik.top = 55
+        a += 1
+        print(a)
+
     sharik.centery += speed_y
 
 
 def otbiv_levopravo_shar():
-    global speed_x
+    global speed_x,a
     if sharik.colliderect(platforma) and platforma.centerx == 972:
         speed_x = -abs(speed_x)  # poletit vlevo
         sharik.right = 945
+        a += 1
+        print(a)
     elif sharik.colliderect(platforma) and platforma.centerx == 27:
         speed_x = abs(speed_x)  # poletit vpravo
         sharik.left = 55
-    sharik.centerx += speed_x
-
-
-def schet():
-    global a
-    if sharik.colliderect(platforma):
-        print(a)
         a += 1
+        print(a)
+    sharik.centerx += speed_x
 
 def otbiv_ot_granic():
     global speed_y
