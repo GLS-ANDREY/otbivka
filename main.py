@@ -9,6 +9,6 @@ while True:
     model.otbiv_verxniz_shar()
     model.otbiv_levopravo_shar()
     model.otbiv_ot_granic()
-    view.taimer()
+    model.speed_sharik()
     view.ekran()
 
