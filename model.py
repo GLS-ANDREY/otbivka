@@ -78,11 +78,14 @@ def urovenb():
         hp += 1
         ydari = 5
         rr = random.randint(1, 2)
-        if rr == 1:
-            speed_y += 3
-        if rr == 2:
-            speed_x += 3
-
+        if rr == 1 and speed_y <= 0:
+            speed_y += -1
+        elif rr == 1 and speed_y >= 0:
+            speed_y += 1
+        if rr == 2 and speed_x <= 0:
+            speed_x += -1
+        elif rr == 2 and speed_x >= 0:
+            speed_x += 1
 
 def speed_sharik():
     ssx = str(speed_x)
