@@ -11,8 +11,6 @@ ydari = 5
 ur = 1
 hp = 3
 
-
-
 def ppl():
     platforma.left = 0
     platforma.y = 0
@@ -44,31 +42,33 @@ def ppn():
 def otbiv_verxniz_shar():
     global speed_y, ydari
     if sharik.colliderect(platforma) and platforma.centery == 972:
-        speed_y = -abs(speed_y)  # poletit vverx
+        speed_y = -abs(speed_y)
         sharik.bottom = 945
         ydari -= 1
         urovenb()
     elif sharik.colliderect(platforma) and platforma.centery == 27:
-        speed_y = abs(speed_y)  # poletit vniz
+        speed_y = abs(speed_y)
         sharik.top = 55
         ydari -= 1
         urovenb()
-    sharik.centery += speed_y
+    if hp > 0:
+        sharik.centery += speed_y
 
 
 def otbiv_levopravo_shar():
     global speed_x, ydari
     if sharik.colliderect(platforma) and platforma.centerx == 972:
-        speed_x = -abs(speed_x)  # poletit vlevo
+        speed_x = -abs(speed_x)
         sharik.right = 945
         ydari -= 1
         urovenb()
     elif sharik.colliderect(platforma) and platforma.centerx == 27:
-        speed_x = abs(speed_x)  # poletit vpravo
+        speed_x = abs(speed_x)
         sharik.left = 55
         ydari -= 1
         urovenb()
-    sharik.centerx += speed_x
+    if hp > 0:
+        sharik.centerx += speed_x
 
 
 def urovenb():
@@ -90,7 +90,8 @@ def urovenb():
 def speed_sharik():
     ssx = str(speed_x)
     ssy = str(speed_y)
-    pygame.display.set_caption("x:" + ssx + " y:" + ssy)
+    if hp > 0:
+        pygame.display.set_caption("x:" + ssx + " y:" + ssy)
 
 
 def otbiv_ot_granic():
